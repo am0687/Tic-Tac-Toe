@@ -1,17 +1,25 @@
-UC3: Accept User Slot Input (1–9)
-Goal: Allow the user to enter a slot number between 1 and 9.
+import java.util.Scanner;
 
-Actor: Human Player
+public class TicTacToe {
+    // Scanner is declared outside to be reused by other methods
+    static Scanner scanner = new Scanner(System.in);
 
-Flow:
-User enters slot number → program reads input → control returns to game logic.
+    public static void main(String[] args) {
+        // Example of calling the UC3 method
+        int slot = getUserInput();
+        System.out.println("You selected slot: " + slot);
+    }
 
-Key Concepts used in UC3:
-
-User Input Handling
-Method Creation
-Separation of Concerns
-Key Requirements:
-
-Read integer input
-Return the slot value
+    /**
+     * UC3: Reads an integer input from the user (1-9)
+     * @return the chosen slot number
+     */
+    public static int getUserInput() {
+        System.out.print("Enter a slot number (1-9): ");
+        
+        // Basic input reading
+        int slot = scanner.nextInt();
+        
+        return slot;
+    }
+}
